@@ -2,7 +2,9 @@ package com.recipe.recipe.service;
 
 
 
-import com.example.recipefinder.dto.RecipeResponse;
+
+import com.recipe.recipe.dto.RecipeResponse;
+import com.recipe.recipe.entity.Recipe;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
@@ -17,7 +19,7 @@ public class RecipeService {
 
     private final RestTemplate restTemplate = new RestTemplate();
 
-    public List<RecipeResponse> searchRecipes(String query) {
+    public List<Recipe> searchRecipes(String query) {
         String url = "https://api.spoonacular.com/recipes/complexSearch?query=" + query + "&apiKey=" + apiKey;
         return restTemplate.getForObject(url, RecipeResponse.class).getResults();
     }
