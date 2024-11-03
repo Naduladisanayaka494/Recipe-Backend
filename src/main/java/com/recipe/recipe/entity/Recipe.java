@@ -1,8 +1,5 @@
 package com.recipe.recipe.entity;
 
-
-
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
@@ -11,6 +8,10 @@ import jakarta.persistence.Id;
 public class Recipe {
     @Id
     private Long id;
+
+    private String title;
+    private String imageUrl;
+    private String description;
 
     public Long getId() {
         return id;
@@ -44,9 +45,7 @@ public class Recipe {
         this.description = description;
     }
 
-    private String title;
-    private String imageUrl;
-    private String description;
+
 
     // Getters and setters
 }
